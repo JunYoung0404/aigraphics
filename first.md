@@ -9,7 +9,128 @@
    큐브의 색상을 임의 색상으로 한다.
  
    팀장이 github에 올리고, 링크를 제출한다.
+  
+# 코드
 
+## html
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta value="viewport" content="width=device-width, inital-scale=1">
+        <link rel="stylesheet" href="01_basic.css">
+        <script type="importmap">
+			{
+				"imports": {
+					"three": "../build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+        <script type="module" src="01_basic.js" defer></script>
+    </head>
+    <body>
+        <div id="webgl-container"></div>
+    </body>
+</html>
+```
+
+## css
+```
+* {
+    outline: none;
+    margin: 0;
+}
+body {
+    overflow: hidden;
+}
+#webgl-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+```
+
+## js
+```
+import * as THREE from '../build/three.module.js';
+class App{
+    constructor(){
+        const divContainer = document.querySelector("#webgl-container");
+        this._divContainer = divContainer;
+
+        const renderer = new THREE.WebGL1Renderer({antialias: true});
+        renderer.setPixelRatio(window.devicePixelRatio);
+        divContainer.appendChild(renderer.domElement);
+        this._renderer = renderer;
+
+        const scene = new THREE.Scene();
+        this._scene = scene;
+
+        this._setupCamera();
+        this._setupLight();
+        this._setupModel();
+
+        window.onresize = this.resize.bind(this);
+        this.resize();
+
+        requestAnimationFrame(this.render.bind(this));
+
+    }
+    _setupCamera(){
+        const width = this._divContainer.clientWidth;
+        const height = this._divContainer.clientHeight;
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            width / height,
+            0.1,
+            100
+        );
+        camera.position.z = 2;
+        this._camera = camera;    
+    }
+    _setupLight(){
+        const color = 0xFFFFFF;  // 빛의 색상 
+        const intensity = 1;
+        const light = new THREE.AmbientLight(color, intensity);     // 자연광 
+        light.position.set(-1, 2, 4);
+        this._scene.add(light);
+    }
+    _setupModel(){
+        const geometry = new THREE.BoxGeometry(1,1,1);
+        const material = new THREE.MeshNormalMaterial({ color: 0x00ff00 });   // MeshNormalMateiral : 법선 벡터 값을 RGB로 나타냄 
+
+        const cube = new THREE.Mesh(geometry, material);
+        this._scene.add(cube);
+        this._cube = cube;
+    }
+    resize(){
+        const width = this._divContainer.clientWidth;
+        const height = this._divContainer.clientHeight;
+
+        this._camera.aspect = width / height;
+        this._camera.updateProjectionMatrix();
+
+        this._renderer.setSize(width, height);
+    }
+    render(time){
+        this._renderer.render(this._scene, this._camera);
+        this.update(time);
+        requestAnimationFrame(this.render.bind(this));
+    }
+    update(time){
+        time *= 0.001;
+        this._cube.rotation.x = time;
+        this._cube.rotation.y = time;
+    }
+}
+
+window.onload = function(){
+    new App()
+}
+```
   ## 수정된 부분
 ```  
    _setupLight(){
