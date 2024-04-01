@@ -4,6 +4,7 @@
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/39cc6509-8933-49b1-90d8-60c82671e500)
 
 ## 소스코드
+https://github.com/JunYoung0404/aigraphics/tree/main/three/code
 
 ### 소감
 교수님이 올려주신 유튜브 영상으로 보면서 따라해보다 안되는 부분은 옆에있는 친구들에게 조언을 구해 해결해 나아갔습니다. 
