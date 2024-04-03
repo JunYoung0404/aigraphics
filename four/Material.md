@@ -2,21 +2,50 @@
 
 ## 과제 시행 결과 사진
 ### part-1
-![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/4dc781e2-3b59-4800-ab91-5d998650b167)
+![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/1f75b115-3ba9-41be-86ab-5f783adef3f8)
+![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/96bdac10-c622-47f5-bf88-c5afd2d3d524)
 
 
+### 모래시계 코드
+```
+ _setupModel(){
+        const vertices = [
+            -1, 1, 0,
+            1, 1, 0,
+            -1, -1, 0,
+            1, -1, 0,
+            
+        ];
+        
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute(
+         "position",
+         new THREE.Float32BufferAttribute(vertices, 3)
+        );
+        const material = new THREE.LineDashedMaterial({
+            color: 0xFF3300,
+            dashSize: 1,
+            gapSize: 1,
+            scale: 8
+     });
+     const line = new THREE.LineLoop(geometry, material);
+     line.computeLineDistances();
+     this._scene.add(line);
+    }
+```
 ### part-2
-![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/6947281d-860d-4cd9-8658-3fe562a3063f)
+![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/fcee5ca2-0c3d-4aaa-a374-53caca24775c)
+
 
 
 ### part-3
-![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/d41f53d9-6b55-4040-bc4e-202f7cd73009)
+![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/2177d27c-6b1e-491d-b74f-c72d5366737f)
+
 
 ### part-4
+![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/0c8deff9-7209-4077-9ad1-66cf7b1dcbaa)
 
-![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/269f8929-aac0-4ca2-bf96-2f6d57cc4cdb)
+
 
 ### 소감
-이번 과제를 통해서 각 강좌에서 어떤식으로 도형의 재질 및 색상,빛을 어디에 비추는지를 알게되었고 사진을 추출하여 도형에 적용하는 코드를 알게 되어 신기했습니다. 또한 영상을 하나하나 시청하면서 코들르 직접 쳐보니 시간이 오래걸리지만 의미가 있었던 시간 이였습니다. 영상을 살펴보다가 안되는 부분이 있으면 옆에있는 동기들에게 안되는 부분을 알려준뒤 같이 고민해 보는 시간을 가지면서 서로 해결해 나아가는 과정을 거치면서 사이가 더 돈독해 진것같습니다. 과제를 할때마다 깃허브에 작성을하니 매 시간에 무엇을 배웟는지 한눈에 파악하는게 가능해졋고 정보가 하나하나 차곡차곡 쌓여가는 깃허브 잔디를 보니 뿌듯해진것같습니다. 앞으로 남은 강좌를 열심히 공부하여 이런 유튜브 채널을 만들어보면 좋겟다는 생각이 들었습니다.
-
- 
+이번 과제를 통해 각 강좌에서 도형의 재질, 색상, 빛의 처리 방법 및 사진을 도형에 적용하는 코드를 배웠습니다. 코드를 통해 실제로 시각적인 효과를 확인하는 과정은 매우 흥미롭고 신기했습니다. 또한 강의 영상을 따라가면서 코드를 직접 입력해보는 것은 시간이 오래 걸리지만 매우 의미 있는 경험이었습니다. 영상을 공부하는 과정에서 문제가 발생하면 동료들과 함께 고민하고 해결해 나가는 과정은 서로를 더 가깝게 만들어주었습니다. 과제를 꾸준히 깃허브에 작성하면서 매 시간마다 어떤 것을 배웠는지 한 눈에 파악할 수 있게 되었고, 깃허브 잔디가 차곡차곡 쌓이는 모습을 보며 뿌듯함을 느꼈습니다. 앞으로도 열심히 남은 강좌를 공부하여 자신의 지식을 공유할 수 있는 유튜브 채널을 만들어보고 싶다는 생각이 들었습니다.
