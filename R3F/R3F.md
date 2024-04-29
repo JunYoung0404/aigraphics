@@ -1,5 +1,13 @@
 # [Lab 2-1] R3F 환경구성 및 Canvas
 
+# 수정 코드
+```
+ <directionalLight position={[1, 1, 1]} />
+            <mesh ref={refMesh} rotation-y={50 * Math.PI / 200}>
+                <tetrahedronGeometry attach="geometry" args={[1, 0]} /> {/* 삼각뿔 모양의 geometry */}
+                <meshStandardMaterial color="#00ffff" />
+            </mesh>
+```
 
 # 결과 사진
 
