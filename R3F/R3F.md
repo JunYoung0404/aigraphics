@@ -1,5 +1,8 @@
 # [Lab 2-1] R3F 환경구성 및 Canvas
 
+# 전체 코드
+https://github.com/JunYoung0404/aigraphics/tree/main/R3F/code
+
 # 수정 코드
 ```
  <directionalLight position={[1, 1, 1]} />
