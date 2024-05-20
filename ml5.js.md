@@ -1,6 +1,13 @@
 # ml5.js실습
 
+## 과제 내용
+- PoseNet
+
+- Handpose
+
+- Facemask
 # PoseNet
+## 실행코드
 ```
 // Copyright (c) 2019 ml5
 //
@@ -79,9 +86,11 @@ function drawSkeleton() {
 }
 
 ```
+## 실행결과 사진
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/3d088770-77c9-4bcf-a7f5-d39c1ab29f15)
 
 # Handpose
+## 실행코드
 ```
 <html>
   <head>
@@ -98,9 +107,11 @@ function drawSkeleton() {
 </html>
 
 ```
+## 실행 결과 사진
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/ef8a6cfc-e6dc-4cfd-bba2-ba112b51a098)
 
 # facemesh
+## 실행 코드
 ```
 <html>
   <head>
@@ -121,10 +132,14 @@ function drawSkeleton() {
 </html>
 
 ```
+## 실행 결과 사진
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/ca96b3a8-ecbc-4138-ab61-5064f676d2d3)
 
 
 ## 변경 사항
+1. 색상변경
+2. 도형 모형 변경
+3. 선추가
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/16158220-df89-4880-9043-c2c747432af1)
 
 # sketch.js
