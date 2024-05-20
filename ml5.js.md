@@ -124,5 +124,48 @@ function drawSkeleton() {
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/ca96b3a8-ecbc-4138-ab61-5064f676d2d3)
 
 
+## 변경 사항
+![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/16158220-df89-4880-9043-c2c747432af1)
+
+# sketch.js
+```
+let facemesh;
+let video;
+let predictions = [];
+
+function setup() {
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.size(width, height);
+
+  facemesh = ml5.facemesh(video, modelReady);
+  facemesh.on('predict', results => {
+    predictions = results;
+  });
+
+  video.hide();
+}
+
+function modelReady() {
+  console.log('Facemesh model ready!');
+}
+
+function draw() {
+  image(video, 0, 0, width, height);
+  drawKeypoints();
+}
+
+function drawKeypoints() {
+  for (let i = 0; i < predictions.length; i += 1) {
+    const keypoints = predictions[i].scaledMesh;
+    for (let j = 0; j < keypoints.length; j += 1) {
+      const [x, y] = keypoints[j];
+      fill(0, 0, 255); // 파란색으로 설정
+       stroke(255, 255, 0); // 노란색 선 설정
+      rect(x, y, 5, 5); // 네모 그리기
+    }
+  }
+}
+```
 
 
