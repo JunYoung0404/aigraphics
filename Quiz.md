@@ -351,5 +351,5 @@ https://github.com/JunYoung0404/aigraphics/assets/50895748/c71faf70-880b-458f-83
 5. rotation-y 속성: rotation-y 속성은 메시의 y축 회전을 설정합니다. 이 코드에서는 rotation-y 속성을 사용하여 다이아몬드를 회전시킵니다.
 
 
-
+# ✅ 소감
 
