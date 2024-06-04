@@ -36,30 +36,59 @@ DirectX 12를 사용하여 창(window)에서 그래픽을 그리는 프로그램
 
 
 # 2. HelloTriangle 삼각형 그리기 <-추가된 내용
-❎추가된 내용
+### ❎추가된 내용
+## 1. 버텍스와 픽셀 쉐이더 추가: shaders.hlsl 파일에 적절한 버텍스와 픽셀 쉐이더를 추가해야 합니다. 
 ```
-1. 클래스 정의와 초기화:
+// Vertex Shader
+struct VertexInput
+{
+    float3 position : POSITION;
+    float4 color : COLOR;
+};
 
-D3D12HelloWindow는 기본 창 설정 코드만 포함합니다.
-D3D12HelloTriangle는 창 설정 외에 뷰포트와 가위(rect) 사각형을 추가로 초기화합니다.
+struct VertexOutput
+{
+    float4 position : SV_POSITION;
+    float4 color : COLOR;
+};
 
-2. 파이프라인 로드:
+VertexOutput VSMain(VertexInput input)
+{
+    VertexOutput output;
+    output.position = float4(input.position, 1.0f);
+    output.color = input.color;
+    return output;
+}
 
-LoadPipeline 메서드는 거의 동일하지만, D3D12HelloTriangle는 뷰포트와 가위(rect) 사각형을 설정합니다.
+// Pixel Shader
+struct PixelInput
+{
+    float4 position : SV_POSITION;
+    float4 color : COLOR;
+};
 
-3. 자산 로드:
-
-D3D12HelloTriangle는 루트 서명, 셰이더, 파이프라인 상태 객체를 생성하고, 삼각형의 정점 데이터를 정의하여 버텍스 버퍼를 생성합니다.
-
-4. 명령 목록 작성:
-
-D3D12HelloTriangle는 명령 목록에서 루트 서명, 뷰포트, 가위(rect) 사각형을 설정하고 삼각형을 그리기 위한 명령을 추가합니다.
-
-5. 렌더링 루프:
-
-OnRender 메서드에서 D3D12HelloTriangle는 명령 목록을 채우고 실행하여 삼각형을 렌더링합니다.
+float4 PSMain(PixelInput input) : SV_TARGET
+{
+    return input.color;
+}
 ```
+## 2. 버텍스 데이터 정의: LoadAssets() 메서드에서 삼각형을 그리기 위한 버텍스 데이터를 정의해야 합니다.
+```
+Vertex triangleVertices[] =
+{
+    { { 0.0f, 0.25f * m_aspectRatio, 0.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
+    { { 0.25f, -0.25f * m_aspectRatio, 0.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
+    { { -0.25f, -0.25f * m_aspectRatio, 0.0f }, { 0.0f, 0.0f, 1.0f, 1.0f } }
+};
+```
+## 3. 프리미티브 타입 설정: PopulateCommandList() 메서드에서 IASetPrimitiveTopology() 함수를 사용하여 프리미티브 타입을 설정해야 합니다. 삼각형을 그리려면 다음과 같이 설정합니다
+```
+m_commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+```
+
 # 3. HelloTexture 텍스쳐를 넣는 방법 <-추가된 내용
+
+
 
 
   
