@@ -7,12 +7,12 @@
 
 3. HelloTexture 텍스쳐를 넣는 방법 <-추가된 내용
 
-❗ 필수
+# ❗필수❗
 * Nuget에서 Microsoft.Direct3D.D3D12 설치되어 있어야 함.
 
 * src\packages 내용도 필요함. #include "include/d3dx12/d3dx12.h"
 
-➡필요한 이유:
+## ➡필요한 이유:
 
 NuGet 패키지는 Direct3D 12 API를 사용할 수 있도록 하고, 추가 헤더 파일(d3dx12.h)은 Direct3D 12 프로그래밍을 더 쉽게 만들기 위해 필요한 유틸리티 함수를 제공합니다. 이 두 가지를 통해 Direct3D 12 프로그래밍 환경을 빠르고 쉽게 설정할 수 있습니다.
 
@@ -184,6 +184,8 @@ m_device->CreateShaderResourceView(m_texture.Get(), &srvDesc, m_srvHeap->GetCPUD
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/867a5352-e1ad-4a37-8edc-525abbbef331)
 
 
+⏹소감:
+교수님께서 올려주신 Direct3D 12 Hello, World! samples 에서 다운을 받아 windowHello와 Hello Triangle,HelloTexture 을 실행해 보면서 Direct3D와 조금 친해진거 같습니다. 먼저 각 소스코드에서의 변화를 chat gpt 4.o와 륀튼 등을 사용해 보면서 공부해 보았고 교수님이 올려주신 사이트를 참고해 보면서도 공부를 해 보았습니다. 그리고 카페에서 올려주신 shader언어와 그리고 주요 쉐어더 언어,설명들을 읽어 보면서 다이렉트 x 에 대해 조금더 알게 되었습니다. 하지만 처음부터 이렇게 막 읽었다고 다 끝이게 아닌것 처럼 기말고사 치기 전까지 천천히 카페를 탐방해 보면서 반복숙달하는것이 가장 중요하다고 생각합니다. 하루에 1~3개의 쉐이더를 공부하면 기말고사전까지 교수님께서 올려주신 쉐이더를 모두 숙달할수있을것 같습니다. 그리고 너겟과 패키지를 왜 설치해야하는지도 교수님께서 수업시간에 설명해주셔서 이유를 알게 되었습니다. 앞으로 남은 기말고사 기간까지 반복 숙달하여 Direct3D와 친해지도록 하겠습니다ㅣ.
 
 
   
