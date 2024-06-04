@@ -1,0 +1,8 @@
+﻿  Performing Custom Build Tools
+  stdafx.cpp
+  Win32Application.cpp
+  D3D12HelloTexture.cpp
+  DXSample.cpp
+  Main.cpp
+  코드를 생성하고 있습니다...
+  D3D12HelloTexture.vcxproj -> C:\Users\PC\Desktop\d3d12-hello-world-samples-win32 (1)\src\HelloTexture\bin\x64\Debug\D3D12HelloTexture.exe
