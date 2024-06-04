@@ -33,7 +33,7 @@ DirectX 12를 사용하여 창(window)에서 그래픽을 그리는 프로그램
 
 프레임 완료 대기 (WaitForPreviousFrame()): GPU가 이전 프레임의 렌더링을 완료할 때까지 기다립니다. 이는 프레임 간 동기화를 위해 필요합니다. 종료 전 GPU가 리소스를 참조하지 않도록 합니다.
 
-#### 소스코드
+### 소스코드
 https://github.com/JunYoung0404/aigraphics/tree/main/Direct3D/HelloWindow/HelloWindow
 
 
@@ -115,7 +115,7 @@ Vertex triangleVertices[] =
 m_commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 ```
 
-#### 소스코드
+### 소스코드
 https://github.com/JunYoung0404/aigraphics/tree/main/Direct3D/HelloTriangle/HelloTriangle
 
 ### 실행 결과 사진
@@ -186,14 +186,14 @@ m_device->CreateShaderResourceView(m_texture.Get(), &srvDesc, m_srvHeap->GetCPUD
 설명:
 텍스처를 셰이더에서 액세스할 수 있도록 셰이더 리소스 뷰(SRV)를 생성합니다. 이는 텍스처의 형식, 차원 및 다른 특성에 맞게 설정됩니다.
 
-#### 소스코드
+### 소스코드
 https://github.com/JunYoung0404/aigraphics/tree/main/Direct3D/HelloTexture/HelloTexture
 
 ### 실행 결과 사진
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/867a5352-e1ad-4a37-8edc-525abbbef331)
 
 
-⏹소감:
+## ⏹소감:
 교수님께서 올려주신 Direct3D 12 Hello, World! samples 에서 다운을 받아 windowHello와 Hello Triangle,HelloTexture 을 실행해 보면서 Direct3D와 조금 친해진거 같습니다. 먼저 각 소스코드에서의 변화를 chat gpt 4.o와 륀튼 등을 사용해 보면서 공부해 보았고 교수님이 올려주신 사이트를 참고해 보면서도 공부를 해 보았습니다. 그리고 카페에서 올려주신 shader언어와 그리고 주요 쉐어더 언어,설명들을 읽어 보면서 다이렉트 x 에 대해 조금더 알게 되었습니다. 하지만 처음부터 이렇게 막 읽었다고 다 끝이게 아닌것 처럼 기말고사 치기 전까지 천천히 카페를 탐방해 보면서 반복숙달하는것이 가장 중요하다고 생각합니다. 하루에 1~3개의 쉐이더를 공부하면 기말고사전까지 교수님께서 올려주신 쉐이더를 모두 숙달할수있을것 같습니다. 그리고 너겟과 패키지를 왜 설치해야하는지도 교수님께서 수업시간에 설명해주셔서 이유를 알게 되었습니다. 앞으로 남은 기말고사 기간까지 반복 숙달하여 Direct3D와 친해지도록 하겠습니다ㅣ.
 
 
