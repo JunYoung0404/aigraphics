@@ -114,6 +114,10 @@ Vertex triangleVertices[] =
 ```
 m_commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 ```
+
+#### 소스코드
+https://github.com/JunYoung0404/aigraphics/tree/main/Direct3D/HelloTriangle/HelloTriangle
+
 ### 실행 결과 사진
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/25dd7ff9-c45f-47a4-974e-e62a28128fc6)
 
@@ -181,6 +185,9 @@ m_device->CreateShaderResourceView(m_texture.Get(), &srvDesc, m_srvHeap->GetCPUD
 ```
 설명:
 텍스처를 셰이더에서 액세스할 수 있도록 셰이더 리소스 뷰(SRV)를 생성합니다. 이는 텍스처의 형식, 차원 및 다른 특성에 맞게 설정됩니다.
+
+#### 소스코드
+https://github.com/JunYoung0404/aigraphics/tree/main/Direct3D/HelloTexture/HelloTexture
 
 ### 실행 결과 사진
 ![image](https://github.com/JunYoung0404/aigraphics/assets/50895748/867a5352-e1ad-4a37-8edc-525abbbef331)
