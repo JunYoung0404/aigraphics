@@ -33,6 +33,8 @@ DirectX 12를 사용하여 창(window)에서 그래픽을 그리는 프로그램
 
 프레임 완료 대기 (WaitForPreviousFrame()): GPU가 이전 프레임의 렌더링을 완료할 때까지 기다립니다. 이는 프레임 간 동기화를 위해 필요합니다. 종료 전 GPU가 리소스를 참조하지 않도록 합니다.
 
+#### 소스코드
+https://github.com/JunYoung0404/aigraphics/tree/main/Direct3D/HelloWindow/HelloWindow
 
 
 # 2. HelloTriangle 삼각형 그리기 <-추가된 내용
